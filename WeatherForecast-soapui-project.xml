@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2829d6e5-6dac-49ce-9208-42c165b87d2d" activeEnvironment="Default" name="WeatherForecast" resourceRoot="" soapui-version="5.3.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="f15e123e-249a-4016-b9d6-0965c8088353" wsaVersion="NONE" name="WeatherForecastSoap" type="wsdl" bindingName="{http://www.webservicex.net}WeatherForecastSoap" soapVersion="1_1" anonymous="optional" definition="http://www.webservicex.net/WeatherForecast.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint></con:endpoints><con:operation id="02cf5b13-5ae0-4600-8292-c0aa52c75f8b" isOneWay="false" action="http://www.webservicex.net/GetWeatherByPlaceName" name="GetWeatherByPlaceName" bindingOperationName="GetWeatherByPlaceName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2b3f2f2a-7993-434a-8048-a66e6a819f69" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webservicex.net">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetWeatherByPlaceName>\r
+         <!--Optional:-->\r
+         <web:PlaceName>?</web:PlaceName>\r
+      </web:GetWeatherByPlaceName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webservicex.net/GetWeatherByPlaceName"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="43f32401-d533-42dc-9fa1-82f10f7ad330" isOneWay="false" action="http://www.webservicex.net/GetWeatherByZipCode" name="GetWeatherByZipCode" bindingOperationName="GetWeatherByZipCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4a297bbb-adf6-4a55-aacb-0becc63f1cf8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webservicex.net">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetWeatherByZipCode>\r
+         <!--Optional:-->\r
+         <web:ZipCode>?</web:ZipCode>\r
+      </web:GetWeatherByZipCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webservicex.net/GetWeatherByZipCode"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="f1605be4-e1fb-4e93-8e12-8522b856c333" wsaVersion="NONE" name="WeatherForecastSoap12" type="wsdl" bindingName="{http://www.webservicex.net}WeatherForecastSoap12" soapVersion="1_2" anonymous="optional" definition="http://www.webservicex.net/WeatherForecast.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://www.webservicex.net/WeatherForecast.asmx?WSDL"><con:part><con:url>http://www.webservicex.net/WeatherForecast.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webservicex.net" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webservicex.net" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Get one week weather forecast for valid zip code or Place name in USA</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webservicex.net">
+      <s:element name="GetWeatherByZipCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ZipCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeatherByZipCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWeatherByZipCodeResult" type="tns:WeatherForecasts"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WeatherForecasts">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Latitude" type="s:float"/>
+          <s:element minOccurs="1" maxOccurs="1" name="Longitude" type="s:float"/>
+          <s:element minOccurs="1" maxOccurs="1" name="AllocationFactor" type="s:float"/>
+          <s:element minOccurs="0" maxOccurs="1" name="FipsCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="PlaceName" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="StateCode" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="Details" type="tns:ArrayOfWeatherData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfWeatherData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WeatherData" type="tns:WeatherData"/>
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WeatherData">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Day" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="WeatherImage" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MaxTemperatureF" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MinTemperatureF" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MaxTemperatureC" type="s:string"/>
+          <s:element minOccurs="0" maxOccurs="1" name="MinTemperatureC" type="s:string"/>
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWeatherByPlaceName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PlaceName" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWeatherByPlaceNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWeatherByPlaceNameResult" type="tns:WeatherForecasts"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WeatherForecasts" type="tns:WeatherForecasts"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWeatherByZipCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeatherByZipCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByZipCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeatherByZipCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWeatherByPlaceName"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWeatherByPlaceNameResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByZipCodeHttpGetIn">
+    <wsdl:part name="ZipCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByZipCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:WeatherForecasts"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameHttpGetIn">
+    <wsdl:part name="PlaceName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameHttpGetOut">
+    <wsdl:part name="Body" element="tns:WeatherForecasts"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByZipCodeHttpPostIn">
+    <wsdl:part name="ZipCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByZipCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:WeatherForecasts"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameHttpPostIn">
+    <wsdl:part name="PlaceName" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetWeatherByPlaceNameHttpPostOut">
+    <wsdl:part name="Body" element="tns:WeatherForecasts"/>
+  </wsdl:message>
+  <wsdl:portType name="WeatherForecastSoap">
+    <wsdl:operation name="GetWeatherByZipCode">
+      <wsdl:documentation>Get one week weather forecast for a valid Zip Code(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByZipCodeSoapIn"/>
+      <wsdl:output message="tns:GetWeatherByZipCodeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <wsdl:documentation>Get one week  weather forecast for a place name(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByPlaceNameSoapIn"/>
+      <wsdl:output message="tns:GetWeatherByPlaceNameSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WeatherForecastHttpGet">
+    <wsdl:operation name="GetWeatherByZipCode">
+      <wsdl:documentation>Get one week weather forecast for a valid Zip Code(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByZipCodeHttpGetIn"/>
+      <wsdl:output message="tns:GetWeatherByZipCodeHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <wsdl:documentation>Get one week  weather forecast for a place name(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByPlaceNameHttpGetIn"/>
+      <wsdl:output message="tns:GetWeatherByPlaceNameHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WeatherForecastHttpPost">
+    <wsdl:operation name="GetWeatherByZipCode">
+      <wsdl:documentation>Get one week weather forecast for a valid Zip Code(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByZipCodeHttpPostIn"/>
+      <wsdl:output message="tns:GetWeatherByZipCodeHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <wsdl:documentation>Get one week  weather forecast for a place name(USA)</wsdl:documentation>
+      <wsdl:input message="tns:GetWeatherByPlaceNameHttpPostIn"/>
+      <wsdl:output message="tns:GetWeatherByPlaceNameHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WeatherForecastSoap" type="tns:WeatherForecastSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeatherByZipCode">
+      <soap:operation soapAction="http://www.webservicex.net/GetWeatherByZipCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <soap:operation soapAction="http://www.webservicex.net/GetWeatherByPlaceName" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherForecastSoap12" type="tns:WeatherForecastSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWeatherByZipCode">
+      <soap12:operation soapAction="http://www.webservicex.net/GetWeatherByZipCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <soap12:operation soapAction="http://www.webservicex.net/GetWeatherByPlaceName" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherForecastHttpGet" type="tns:WeatherForecastHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetWeatherByZipCode">
+      <http:operation location="/GetWeatherByZipCode"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <http:operation location="/GetWeatherByPlaceName"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WeatherForecastHttpPost" type="tns:WeatherForecastHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetWeatherByZipCode">
+      <http:operation location="/GetWeatherByZipCode"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWeatherByPlaceName">
+      <http:operation location="/GetWeatherByPlaceName"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WeatherForecast">
+    <wsdl:documentation>Get one week weather forecast for valid zip code or Place name in USA</wsdl:documentation>
+    <wsdl:port name="WeatherForecastSoap" binding="tns:WeatherForecastSoap">
+      <soap:address location="http://www.webservicex.net/WeatherForecast.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherForecastSoap12" binding="tns:WeatherForecastSoap12">
+      <soap12:address location="http://www.webservicex.net/WeatherForecast.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherForecastHttpGet" binding="tns:WeatherForecastHttpGet">
+      <http:address location="http://www.webservicex.net/WeatherForecast.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="WeatherForecastHttpPost" binding="tns:WeatherForecastHttpPost">
+      <http:address location="http://www.webservicex.net/WeatherForecast.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint></con:endpoints><con:operation id="14f80884-75e9-48e9-9ca0-7f46034a10b7" isOneWay="false" action="http://www.webservicex.net/GetWeatherByPlaceName" name="GetWeatherByPlaceName" bindingOperationName="GetWeatherByPlaceName" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7c48fd43-ef02-4031-bad7-8a5c5abc5cac" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webservicex.net">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <web:GetWeatherByPlaceName>\r
+         <!--Optional:-->\r
+         <web:PlaceName>?</web:PlaceName>\r
+      </web:GetWeatherByPlaceName>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webservicex.net/WeatherForecastSoap/GetWeatherByPlaceNameRequest"/></con:call></con:operation><con:operation id="f85620c1-7c4e-43dc-9023-ec34b99277e2" isOneWay="false" action="http://www.webservicex.net/GetWeatherByZipCode" name="GetWeatherByZipCode" bindingOperationName="GetWeatherByZipCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="496d64e4-c83d-4994-849c-77b1c127e9c8" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:web="http://www.webservicex.net">\r
+   <soap:Header/>\r
+   <soap:Body>\r
+      <web:GetWeatherByZipCode>\r
+         <!--Optional:-->\r
+         <web:ZipCode>?</web:ZipCode>\r
+      </web:GetWeatherByZipCode>\r
+   </soap:Body>\r
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webservicex.net/WeatherForecastSoap/GetWeatherByZipCodeRequest"/></con:call></con:operation></con:interface><con:testSuite id="b35e906c-2d2a-471a-96c2-908a1e666a1c" name="WeatherForecastSoap TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="9bceda8d-5b4f-46cb-99b8-b591ec5de1c6" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetWeatherByPlaceName TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="0a165591-e3e1-47e4-9b50-333242f4dad9" name="GetWeatherByPlaceName"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WeatherForecastSoap</con:interface><con:operation>GetWeatherByPlaceName</con:operation><con:request name="GetWeatherByPlaceName" id="af13343f-e05d-4dc5-a4c2-28619519ed3d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webservicex.net">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetWeatherByPlaceName>\r
+         <!--Optional:-->\r
+         <web:PlaceName>?</web:PlaceName>\r
+      </web:GetWeatherByPlaceName>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://www.webservicex.net/GetWeatherByPlaceName"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase id="bc1c1cdd-0813-4dcd-a75d-308d3f98e202" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="GetWeatherByZipCode TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="d870c27c-81cc-4826-a855-f9dd45a8b253" name="GetWeatherByZipCode"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>WeatherForecastSoap</con:interface><con:operation>GetWeatherByZipCode</con:operation><con:request name="GetWeatherByZipCode" id="b15cc049-15ca-4070-a1ed-e52762f18d5b"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://www.webservicex.net/WeatherForecast.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webservicex.net">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetWeatherByZipCode>\r
+         <!--Optional:-->\r
+         <web:ZipCode>?</web:ZipCode>\r
+      </web:GetWeatherByZipCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:wsaConfig action="http://www.webservicex.net/GetWeatherByZipCode"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
