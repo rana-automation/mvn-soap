@@ -39,7 +39,7 @@
                             <value>${project.build.directory}/soapui-logs/</value>
                         </property>
                     </soapuiProperties>
-                    </configuration>
+                       </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -60,4 +60,6 @@
       <properties>
         <project.file>WeatherForecast-soapui-project.xml</project.file>
       </properties>
-    </project>
+    </profile>
+	  </profiles>
+</project>
