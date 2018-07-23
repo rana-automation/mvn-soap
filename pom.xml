@@ -23,7 +23,7 @@
         <plugins>
             <plugin>
                 <groupId>com.smartbear.soapui</groupId>
-                <artifactId>soapui-pro-maven-plugin</artifactId>
+                <artifactId>soapui-maven-plugin</artifactId>
                 <version>5.0.0</version>
                 <configuration>
                     <projectFile>${project.file}</projectFile>
